@@ -24,6 +24,11 @@
 		A2D61E022775993300F0F5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2D61E052775993300F0F5C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2D61E072775993300F0F5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2D61E192779AEED00F0F5C5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		A2D61E1A2779AEED00F0F5C5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A2D61E1B2779AF2E00F0F5C5 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		A2D61E1C2779AF2E00F0F5C5 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A2D61E1E2779AFA400F0F5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				fi,
 			);
 			mainGroup = A2D61DED2775993000F0F5C5;
 			productRefGroup = A2D61DF72775993000F0F5C5 /* Products */;
@@ -151,6 +158,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				A2D61E002775993000F0F5C5 /* Base */,
+				A2D61E192779AEED00F0F5C5 /* ar */,
+				A2D61E1B2779AF2E00F0F5C5 /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,6 +168,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				A2D61E052775993300F0F5C5 /* Base */,
+				A2D61E1A2779AEED00F0F5C5 /* ar */,
+				A2D61E1C2779AF2E00F0F5C5 /* fi */,
+				A2D61E1E2779AFA400F0F5C5 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,6 +182,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -231,6 +244,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
