@@ -10,6 +10,12 @@
 		A21F14B12779E87900D1034F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A21F14B02779E87900D1034F /* FirebaseStorage */; };
 		A21F14B82779EB3A00D1034F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A21F14B72779EB3A00D1034F /* .gitignore */; };
 		A21F14BA2779EB8200D1034F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A21F14B92779EB8200D1034F /* README.md */; };
+		A21F14BF2779F59600D1034F /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21F14BE2779F59600D1034F /* ImageView.swift */; };
+		A21F14C12779F5B400D1034F /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21F14C02779F5B400D1034F /* Activity.swift */; };
+		A2880AEC277AF0B200EA4B92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */; };
+		A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */; };
+		A2A5EB53277AB985003ED3C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */; };
+		A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */; };
 		A2D61DFA2775993000F0F5C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DF92775993000F0F5C5 /* AppDelegate.swift */; };
 		A2D61DFC2775993000F0F5C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */; };
 		A2D61DFE2775993000F0F5C5 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DFD2775993000F0F5C5 /* LandingViewController.swift */; };
@@ -26,6 +32,12 @@
 		A21F14B32779E8BB00D1034F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21F14B72779EB3A00D1034F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		A21F14B92779EB8200D1034F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A21F14BE2779F59600D1034F /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		A21F14C02779F5B400D1034F /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A2D61DF62775993000F0F5C5 /* PrivateTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D61DF92775993000F0F5C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +71,6 @@
 		A21F14B42779EA4D00D1034F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A21F14B52779EAB000D1034F /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -68,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				A2D61DFF2775993000F0F5C5 /* Main.storyboard */,
-				A21F14B62779EABD00D1034F /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -77,10 +87,23 @@
 			isa = PBXGroup;
 			children = (
 				A2D61DFD2775993000F0F5C5 /* LandingViewController.swift */,
+				A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */,
+				A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */,
+				A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */,
+				A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */,
 				A2D61DF92775993000F0F5C5 /* AppDelegate.swift */,
 				A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A21F14BD2779F53C00D1034F /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				A21F14BE2779F59600D1034F /* ImageView.swift */,
+				A21F14C02779F5B400D1034F /* Activity.swift */,
+			);
+			path = Utill;
 			sourceTree = "<group>";
 		};
 		A2D61DED2775993000F0F5C5 = {
@@ -105,9 +128,12 @@
 		A2D61DF82775993000F0F5C5 /* PrivateTeacher */ = {
 			isa = PBXGroup;
 			children = (
+				A21F14BD2779F53C00D1034F /* Utill */,
 				A21F14B42779EA4D00D1034F /* Model */,
-				A2D61E022775993300F0F5C5 /* Assets.xcassets */,
+				A21F14B52779EAB000D1034F /* View */,
+				A21F14B62779EABD00D1034F /* Controller */,
 				A2D61E042775993300F0F5C5 /* LaunchScreen.storyboard */,
+				A2D61E022775993300F0F5C5 /* Assets.xcassets */,
 				A2D61E072775993300F0F5C5 /* Info.plist */,
 				A2D61E282779DB5200F0F5C5 /* GoogleService-Info.plist */,
 			);
@@ -195,6 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2880AEC277AF0B200EA4B92 /* LoginViewController.swift in Sources */,
+				A21F14C12779F5B400D1034F /* Activity.swift in Sources */,
+				A21F14BF2779F59600D1034F /* ImageView.swift in Sources */,
+				A2A5EB53277AB985003ED3C5 /* RegisterViewController.swift in Sources */,
+				A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */,
+				A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */,
 				A2D61DFE2775993000F0F5C5 /* LandingViewController.swift in Sources */,
 				A2D61DFA2775993000F0F5C5 /* AppDelegate.swift in Sources */,
 				A2D61DFC2775993000F0F5C5 /* SceneDelegate.swift in Sources */,
