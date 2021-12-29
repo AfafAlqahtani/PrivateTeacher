@@ -64,10 +64,16 @@ class RegisterViewController: UIViewController {
                                 print("URL",url.absoluteString)
                                 let db = Firestore.firestore()
                                 let userData: [String:String] = [
-                                    "id":authResult.user.uid,
+                                    "userId":authResult.user.uid,
                                     "name":name,
                                     "email":email,
-                                    "imageUrl":url.absoluteString
+                                    "imageUrl":url.absoluteString,
+                                    "gender" :"f",
+                                    "phoneNumber":"6767",
+                                    "subject":"uuu",
+                                    "teachingPlace":"jj",
+                                    "city":"l",
+                                    "description":"nn"
                                 ]
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {

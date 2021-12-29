@@ -26,6 +26,10 @@ class DetailsViewController: UIViewController {
             postStageLabel.text = selectedPost.stage
             postSubjectLabel.text = selectedPost.subject
             postCityLabel.text = selectedPost.city
+            postGenderLabel.text = selectedPost.user.gender
+            postPhoneNumberLabel.text = selectedPost.user.phoneNumber
+            postTeachingPlaceLabel.text = selectedPost.user.teachingPlace
+            postDescriptionLabel.text = selectedPost.user.description
             postImageView.image = selectedImage
         }
         // Do any additional setup after loading the view.

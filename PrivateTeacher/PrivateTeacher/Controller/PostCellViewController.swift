@@ -32,6 +32,7 @@ class PostCellViewController: UITableViewCell {
         postImageView.loadImageUsingCache(with: post.imageUrl)
         userNameLabel.text = post.user.name
         userImageView.loadImageUsingCache(with: post.user.imageUrl)
+        print("name & image",post.user.imageUrl,post.user.name)
         return self
     }
     

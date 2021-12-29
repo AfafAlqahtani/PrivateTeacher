@@ -36,6 +36,7 @@ class PostViewController: UIViewController {
             subjectTextField.text = selectedPost.subject
             cityTextField.text = selectedPost.city
             postImageView.image = selectedImage
+            descriptionTextField.text = selectedPost.user.description
             actionButton.setTitle("Update Post", for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
             self.navigationItem.rightBarButtonItem = deleteBarButton
@@ -60,11 +61,11 @@ class PostViewController: UIViewController {
                     storageRef.delete { error in
                         if let error = error {
                             print("Error in storage delete",error)
-                        } else {
+                        }
                             self.activityIndicator.stopAnimating()
                             self.navigationController?.popViewController(animated: true)
                         }
-                    }
+                    
                     
                 }
             }
