@@ -12,7 +12,12 @@
 		A21F14BA2779EB8200D1034F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A21F14B92779EB8200D1034F /* README.md */; };
 		A21F14BF2779F59600D1034F /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21F14BE2779F59600D1034F /* ImageView.swift */; };
 		A21F14C12779F5B400D1034F /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21F14C02779F5B400D1034F /* Activity.swift */; };
+		A267D7A0277B706600E149B3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267D79F277B706600E149B3 /* DetailsViewController.swift */; };
+		A267D7A2277B74D400E149B3 /* PostCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267D7A1277B74D400E149B3 /* PostCellViewController.swift */; };
 		A2880AEC277AF0B200EA4B92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */; };
+		A2880AEE277B070B00EA4B92 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AED277B070B00EA4B92 /* Post.swift */; };
+		A2880AF0277B0AD700EA4B92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AEF277B0AD700EA4B92 /* User.swift */; };
+		A2880AF2277B2CEF00EA4B92 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */; };
 		A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */; };
 		A2A5EB53277AB985003ED3C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */; };
 		A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */; };
@@ -34,7 +39,12 @@
 		A21F14B92779EB8200D1034F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A21F14BE2779F59600D1034F /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		A21F14C02779F5B400D1034F /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		A267D79F277B706600E149B3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A267D7A1277B74D400E149B3 /* PostCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewController.swift; sourceTree = "<group>"; };
 		A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2880AED277B070B00EA4B92 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A2880AEF277B0AD700EA4B92 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +81,8 @@
 		A21F14B42779EA4D00D1034F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2880AED277B070B00EA4B92 /* Post.swift */,
+				A2880AEF277B0AD700EA4B92 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,7 +102,10 @@
 				A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */,
 				A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */,
 				A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */,
+				A267D7A1277B74D400E149B3 /* PostCellViewController.swift */,
 				A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */,
+				A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */,
+				A267D79F277B706600E149B3 /* DetailsViewController.swift */,
 				A2D61DF92775993000F0F5C5 /* AppDelegate.swift */,
 				A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */,
 			);
@@ -221,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2880AF2277B2CEF00EA4B92 /* PostViewController.swift in Sources */,
 				A2880AEC277AF0B200EA4B92 /* LoginViewController.swift in Sources */,
 				A21F14C12779F5B400D1034F /* Activity.swift in Sources */,
 				A21F14BF2779F59600D1034F /* ImageView.swift in Sources */,
@@ -228,8 +244,12 @@
 				A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */,
 				A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */,
 				A2D61DFE2775993000F0F5C5 /* LandingViewController.swift in Sources */,
+				A267D7A2277B74D400E149B3 /* PostCellViewController.swift in Sources */,
 				A2D61DFA2775993000F0F5C5 /* AppDelegate.swift in Sources */,
 				A2D61DFC2775993000F0F5C5 /* SceneDelegate.swift in Sources */,
+				A2880AEE277B070B00EA4B92 /* Post.swift in Sources */,
+				A267D7A0277B706600E149B3 /* DetailsViewController.swift in Sources */,
+				A2880AF0277B0AD700EA4B92 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
