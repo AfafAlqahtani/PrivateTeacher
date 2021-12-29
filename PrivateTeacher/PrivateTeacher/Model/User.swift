@@ -24,8 +24,8 @@ struct User {
            let name = dict["name"] as? String,
            let imageUrl = dict["imageUrl"] as? String,
            let email = dict["email"] as? String,
-           let gender = dict["Gender"] as? String,
-           let phoneNumber = dict["Gender"] as? String,
+           let gender = dict["gender"] as? String,
+           let phoneNumber = dict["phoneNumber"] as? String,
            let subject = dict["subject"] as? String,
            let teachingPlace = dict["teachingPlace"] as? String,
            let city = dict["city"] as? String {

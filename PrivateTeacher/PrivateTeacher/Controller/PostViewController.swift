@@ -132,10 +132,7 @@ class PostViewController: UIViewController {
                 }
             }
         }
-        
     }
-
-
     }
 
 extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -164,11 +164,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-fb-aCz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-fb-aCz">
                                 <rect key="frame" x="0.0" y="194" width="375" height="473"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="202" id="poh-ZK-HhA" customClass="PostCellViewController">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCellViewController" rowHeight="202" id="poh-ZK-HhA" customClass="PostCellViewController" customModule="PrivateTeacher" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="375" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="poh-ZK-HhA" id="LfR-GT-DhH">
@@ -241,12 +242,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vzt-1I-fH2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vzt-1I-fH2" firstAttribute="trailing" secondItem="j6U-fb-aCz" secondAttribute="trailing" id="7k8-kx-8vR"/>
-                            <constraint firstItem="j6U-fb-aCz" firstAttribute="leading" secondItem="vzt-1I-fH2" secondAttribute="leading" id="BSg-Xp-pyj"/>
-                            <constraint firstItem="vzt-1I-fH2" firstAttribute="bottom" secondItem="j6U-fb-aCz" secondAttribute="bottom" id="PQD-CW-fEc"/>
-                            <constraint firstItem="j6U-fb-aCz" firstAttribute="top" secondItem="vzt-1I-fH2" secondAttribute="top" constant="150" id="cXN-kU-Vb2"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HNA-dO-WF5">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="hSf-Ti-gQj">
@@ -676,7 +671,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZH1-yz-7gi">
             <objects>
-                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="SgA-ZL-fra" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SgA-ZL-fra" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YEp-B4-xVx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

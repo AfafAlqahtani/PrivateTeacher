@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         didSet {
             postsTableView.delegate = self
             postsTableView.dataSource = self
-            postsTableView.register(UINib(nibName: "PostCellViewController", bundle: nil), forCellReuseIdentifier: "PostCellViewController")
+//            postsTableView.register(UINib(nibName: "PostCellViewController", bundle: nil), forCellReuseIdentifier: "PostCellViewController")
         }
     }
     
@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
                 let vc = segue.destination as! PostViewController
                 vc.selectedPost = selectedPost
                 vc.selectedPostImage = selectedPostImage
-            }else {
+            }else if identifier == "toDetailsVC" {
                 let vc = segue.destination as! DetailsViewController
                 vc.selectedPost = selectedPost
                 vc.selectedPostImage = selectedPostImage
