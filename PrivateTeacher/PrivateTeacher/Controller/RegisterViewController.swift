@@ -78,7 +78,7 @@ class RegisterViewController: UIViewController {
                                     "imageUrl":url.absoluteString,
                                     "gender" :"f",
                                     "phoneNumber":"6767",
-                                    "subject":"uuu",
+                                    "subject":"jk",
                                     "teachingPlace":"jj",
                                     "city":"l",
                                     "description":"nn"

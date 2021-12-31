@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = true
         
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = "Search subject"
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
         
@@ -176,16 +176,30 @@ extension HomeViewController: UITableViewDelegate{
         }
     }
 }
+//extension HomeViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        filteredPost = posts.filter({ selectedPost in
+//            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased())
+//        })
+//filteredPost.append(posts.filter({ selectedPost in
+//            return selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased())
+//        })
+//
+//filteredPost.append(posts.filter({ selectedPost in
+//            return selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased())
+//        })
+//        postsTableView.reloadData()
+//
+//    }
+//        }
+        
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredPost = posts.filter({ selectedPost in
-            return selectedPost.stage.lowercased().contains(searchController.searchBar.text!)
+            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased())
         })
         postsTableView.reloadData()
-//            return .lowercased().contains(searchController.searchBar.text!)
-//        })
-//        tableView.reloadData()
-//
+
     }
 }
