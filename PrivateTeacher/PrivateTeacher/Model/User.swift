@@ -21,8 +21,10 @@ struct User {
     
     
     init(dict:[String:Any]) {
+        
         if let name = dict["name"] as? String,
            let imageUrl = dict["imageUrl"] as? String,
+           let id = dict["userId"] as? String,
            let email = dict["email"] as? String,
            let gender = dict["gender"] as? String,
            let phoneNumber = dict["phoneNumber"] as? String,
@@ -39,6 +41,7 @@ struct User {
             self.city = city
             self.description = description
             self.imageUrl = imageUrl
+            self.id = id
         }
             
     }

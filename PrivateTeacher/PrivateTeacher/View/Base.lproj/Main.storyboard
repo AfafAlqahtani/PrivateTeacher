@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JT4-pF-JJ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3682" y="-182"/>
+            <point key="canvasLocation" x="3631" y="-358"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="GG7-0F-VQI">
@@ -231,7 +231,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ad Teacher"/>
                                 <connections>
-                                    <segue destination="GgY-H0-j3p" kind="show" identifier="toPostVC" id="fPl-xB-FZ9"/>
+                                    <segue destination="GgY-H0-j3p" kind="show" identifier="" id="fPl-xB-FZ9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,6 +257,7 @@
                     <connections>
                         <outlet property="postsTableView" destination="j6U-fb-aCz" id="4je-7Z-en3"/>
                         <segue destination="dBW-Qc-t8I" kind="show" identifier="toDetailsVC" id="Cwx-tc-ugX"/>
+                        <segue destination="GgY-H0-j3p" kind="show" identifier="toPostVC" id="ibT-ZZ-pDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufB-ip-ClL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -293,9 +294,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add"/>
-                                <connections>
-                                    <action selector="handleActionTouch:" destination="GgY-H0-j3p" eventType="touchUpInside" id="pi4-pL-ZTk"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-di-AAS">
                                 <rect key="frame" x="26" y="177" width="86" height="35"/>
@@ -381,7 +379,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="TmJ-UJ-Gf7"/>
                     <connections>
-                        <outlet property="actionButton" destination="Zcj-cX-eOx" id="LIK-l2-JFS"/>
                         <outlet property="cityTextField" destination="3fQ-pr-ADI" id="U2i-lm-HHc"/>
                         <outlet property="descriptionTextField" destination="J1G-xF-3fh" id="QfY-nN-0ms"/>
                         <outlet property="genderTextField" destination="SFe-8F-sdg" id="sK1-SQ-oE4"/>
@@ -682,6 +679,9 @@
             <point key="canvasLocation" x="1645.5999999999999" y="586.95652173913049"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ibT-ZZ-pDJ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

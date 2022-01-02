@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = true
         
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search subject"
+        searchController.searchBar.placeholder = "Search"
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
         
