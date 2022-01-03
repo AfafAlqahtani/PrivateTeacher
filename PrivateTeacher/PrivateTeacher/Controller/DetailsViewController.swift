@@ -34,4 +34,45 @@ class DetailsViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var stageLabelLanguage2: UILabel!{
+        didSet{
+        stageLabelLanguage2.text = "Stage".localizeed
+    }
+    }
+    
+    @IBOutlet weak var genderLabelLanguage: UILabel!{
+        didSet{
+            genderLabelLanguage.text = "Gender".localizeed
+        }
+    }
+    
+    @IBOutlet weak var phoneNumberLabelLanguage: UILabel!{
+        didSet{
+            phoneNumberLabelLanguage.text = "Phone Number".localizeed
+        }
+    }
+    @IBOutlet weak var teachingLabelLanguage2: UILabel!{
+        didSet{
+            teachingLabelLanguage2.text = "Teaching Place".localizeed
+        }
+    }
+    
+    @IBOutlet weak var subjectLabelLanguage: UILabel!{
+        didSet{
+            subjectLabelLanguage.text = "Subject".localizeed
+        }
+    }
+    @IBOutlet weak var cityLabelLanguage: UILabel!{
+        didSet{
+            cityLabelLanguage.text = "City".localizeed
+        }
+    }
+    
+    @IBOutlet weak var discreptionLabelLanguage2: UILabel!{
+        didSet{
+            discreptionLabelLanguage2.text = "Brife about me".localizeed
+        }
+    }
+    
 }

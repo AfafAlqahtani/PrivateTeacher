@@ -17,10 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-o6-heG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-o6-heG">
                                 <rect key="frame" x="49" y="423" width="88" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="UM3-ea-qMo"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register">
@@ -30,17 +32,21 @@
                                     <segue destination="HNR-Oc-dvN" kind="show" id="gOB-cP-4qp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="if you are a new user, please register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-O9-hjh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="if you are a new user, please register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-O9-hjh">
                                 <rect key="frame" x="49" y="475" width="277" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="JQi-JV-dgm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOD-aq-aHo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOD-aq-aHo">
                                 <rect key="frame" x="240" y="423" width="86" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="04k-9F-Qxo"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LogIN">
@@ -50,36 +56,48 @@
                                     <segue destination="Kck-zm-OBl" kind="show" id="obM-QB-J76"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="GRX-bY-y1M">
-                                <rect key="frame" x="37" y="44" width="289" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D5Y-ii-LDi">
+                                <rect key="frame" x="49" y="72" width="278" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nve-B7-gG1"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="Arabic"/>
-                                    <segment title="English"/>
-                                    <segment title="Frinsh"/>
+                                    <segment title="ar"/>
+                                    <segment title="en"/>
+                                    <segment title="fr"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" systemColor="systemGrayColor"/>
+                                <color key="selectedSegmentTintColor" red="0.2581873422" green="0.2581873422" blue="0.2581873422" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <action selector="languageChangeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qcc-6E-MUf"/>
+                                    <action selector="languageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wic-da-2aM"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ma1-o6-heG" firstAttribute="baseline" secondItem="yOD-aq-aHo" secondAttribute="baseline" id="5tx-of-UBM"/>
+                            <constraint firstItem="D5Y-ii-LDi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CDQ-zh-OXc"/>
+                            <constraint firstItem="ma1-o6-heG" firstAttribute="leading" secondItem="BD6-O9-hjh" secondAttribute="leading" id="FWh-Jt-697"/>
+                            <constraint firstItem="D5Y-ii-LDi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="Mwh-HI-F4z"/>
+                            <constraint firstItem="BD6-O9-hjh" firstAttribute="top" secondItem="ma1-o6-heG" secondAttribute="bottom" constant="21" id="Uci-Y1-Ea1"/>
+                            <constraint firstItem="yOD-aq-aHo" firstAttribute="trailing" secondItem="BD6-O9-hjh" secondAttribute="trailing" id="V10-67-677"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BD6-O9-hjh" secondAttribute="bottom" constant="111" id="aGK-cU-fFl"/>
+                            <constraint firstItem="D5Y-ii-LDi" firstAttribute="centerX" secondItem="BD6-O9-hjh" secondAttribute="centerX" id="qb6-Vb-ups"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="utz-NJ-EKi"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="LogInBottun" destination="yOD-aq-aHo" id="fdc-S1-fFc"/>
-                        <outlet property="languageChangeOtlit" destination="GRX-bY-y1M" id="uUX-W3-DKy"/>
+                        <outlet property="languageChangeOtlit" destination="D5Y-ii-LDi" id="Sk3-ya-iZQ"/>
                         <outlet property="registerButtonLocalized" destination="ma1-o6-heG" id="kMg-PO-bQf"/>
                         <outlet property="registerNoteLabel" destination="BD6-O9-hjh" id="aY0-vQ-EXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3684" y="-197"/>
+            <point key="canvasLocation" x="3684" y="-197.45127436281859"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Ikn-sM-gey">
@@ -165,9 +183,14 @@
                     <navigationItem key="navigationItem" id="gcN-xu-ssy"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="0Bb-VV-Mjb" id="50J-jU-cgp"/>
+                        <outlet property="emailLabelLanguage" destination="Zlh-Ou-tXl" id="sr3-gw-nGE"/>
                         <outlet property="emailTextField" destination="R7P-JN-BrQ" id="iKz-4j-923"/>
+                        <outlet property="nameLableLanguage" destination="aE1-xr-Dhm" id="qSW-yd-NEE"/>
                         <outlet property="nameTextField" destination="hBn-cR-nDa" id="vOd-Ky-Z0M"/>
+                        <outlet property="passwordLabelLanguage" destination="PP9-BZ-f78" id="oFZ-sw-vZC"/>
+                        <outlet property="passwordLabelLanguage2" destination="dgB-Fs-XHN" id="K2s-nx-iN9"/>
                         <outlet property="passwordTextField" destination="AH2-PU-9b0" id="NIK-Ld-g0F"/>
+                        <outlet property="rigesterLabelLanguage" destination="alL-Vf-Wqr" id="9Nb-ai-Hgv"/>
                         <outlet property="userImageView" destination="B12-Fb-yfc" id="V6V-PO-fwi"/>
                     </connections>
                 </viewController>
@@ -402,13 +425,20 @@
                     <navigationItem key="navigationItem" id="TmJ-UJ-Gf7"/>
                     <connections>
                         <outlet property="actionButton" destination="Zcj-cX-eOx" id="BcY-TV-liq"/>
+                        <outlet property="cityLabelLanguage" destination="IYP-bd-7Y2" id="kB9-yP-R6R"/>
                         <outlet property="cityTextField" destination="3fQ-pr-ADI" id="U2i-lm-HHc"/>
                         <outlet property="descriptionTextField" destination="J1G-xF-3fh" id="QfY-nN-0ms"/>
+                        <outlet property="discreptionLabelLanguage" destination="cSG-bf-7db" id="yN3-3l-jEs"/>
+                        <outlet property="genderLabelLang" destination="KrB-lm-taN" id="LDE-fm-KEu"/>
                         <outlet property="genderTextField" destination="SFe-8F-sdg" id="sK1-SQ-oE4"/>
+                        <outlet property="phoneNumberLang" destination="6fg-Gl-gba" id="yQ7-YN-0yQ"/>
                         <outlet property="phoneNumberTextField" destination="d5k-xh-xsB" id="jU3-1z-Msd"/>
                         <outlet property="postImageView" destination="4iW-Rm-p26" id="nvI-sx-8Bn"/>
+                        <outlet property="stageLabelLanguage" destination="Hfw-di-AAS" id="mrr-61-TIl"/>
                         <outlet property="stageTextFielf" destination="5pl-l7-DDl" id="1FG-Yf-1qy"/>
+                        <outlet property="subjectLabelLang" destination="4pD-og-ZkX" id="M0H-m0-BSM"/>
                         <outlet property="subjectTextField" destination="ucj-T6-FsG" id="zZF-Hg-iMv"/>
+                        <outlet property="teachingLabelLng" destination="HAr-41-qLI" id="MYo-lF-11H"/>
                         <outlet property="teachingPlaceTextField" destination="eJU-Vu-qWX" id="HdD-ht-ECw"/>
                     </connections>
                 </viewController>
@@ -531,6 +561,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="kfz-eB-JQc"/>
                     <connections>
+                        <outlet property="cityLabelLanguage" destination="Sqf-Nm-eDN" id="FVI-AN-c74"/>
+                        <outlet property="discreptionLabelLanguage2" destination="VbX-sy-vUE" id="zjf-Rq-U7P"/>
+                        <outlet property="genderLabelLanguage" destination="N5j-kN-BsI" id="IkD-3n-k8x"/>
+                        <outlet property="phoneNumberLabelLanguage" destination="1CB-TK-7rP" id="Fbh-J1-amr"/>
                         <outlet property="postCityLabel" destination="rsw-Ex-snA" id="YFK-Se-OvY"/>
                         <outlet property="postDescriptionLabel" destination="h8I-4G-Jja" id="P0d-vd-0Vs"/>
                         <outlet property="postGenderLabel" destination="YTY-z9-kc3" id="rRR-35-gQq"/>
@@ -539,6 +573,9 @@
                         <outlet property="postStageLabel" destination="n04-i3-C5d" id="syU-68-qyp"/>
                         <outlet property="postSubjectLabel" destination="zvH-bm-rT4" id="6vm-zj-G4c"/>
                         <outlet property="postTeachingPlaceLabel" destination="Blg-4S-fu6" id="Cwc-B4-5WB"/>
+                        <outlet property="stageLabelLanguage2" destination="Gh1-Ee-8pv" id="HNf-y8-yIG"/>
+                        <outlet property="subjectLabelLanguage" destination="BRz-PR-hnA" id="bWT-0H-csU"/>
+                        <outlet property="teachingLabelLanguage2" destination="gQS-wT-zQ9" id="Ylz-CA-Z0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcB-IS-nEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -636,8 +673,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="02D-Cg-Dmk"/>
                     <connections>
+                        <outlet property="emailLabelLanguage2" destination="UDr-H1-gQc" id="VnP-bH-vdv"/>
                         <outlet property="emailTextField" destination="bT6-XK-JF1" id="tYS-o4-V9X"/>
+                        <outlet property="passwordLabelLanguagee" destination="imq-Gl-Yke" id="td9-TU-cGV"/>
                         <outlet property="passwordTextField" destination="j82-on-gom" id="uvH-jN-p8E"/>
+                        <outlet property="sigiInBottunLangage" destination="IYE-Bs-O7L" id="OYE-2C-hB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qu-tF-fQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -691,9 +731,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

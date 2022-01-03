@@ -33,6 +33,8 @@ class PostViewController: UIViewController {
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{
             stageTextFielf.text = selectedPost.stage
+            genderTextField.text = selectedPost.user.gender
+            phoneNumberLang.text = selectedPost.user.phoneNumber
             subjectTextField.text = selectedPost.subject
             cityTextField.text = selectedPost.city
             postImageView.image = selectedImage
@@ -79,7 +81,10 @@ class PostViewController: UIViewController {
            let stage = stageTextFielf.text,
            let subject = subjectTextField.text,
            let city = cityTextField.text,
-           
+//           let genderTextField = genderTextField.text,
+//           let phoneNumberTextField = phoneNumberTextField.text,
+//           let descriptionTextField = descriptionTextField.text,
+//
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
 //            ref.addDocument(data:)
@@ -134,6 +139,47 @@ class PostViewController: UIViewController {
             }
         }
     }
+    @IBOutlet weak var stageLabelLanguage: UILabel!{
+        didSet{
+            stageLabelLanguage.text = "Stage".localizeed
+        }
+    }
+    @IBOutlet weak var genderLabelLang: UILabel!{
+        didSet{
+            genderLabelLang.text = "Gender".localizeed
+        }
+    }
+    
+    @IBOutlet weak var phoneNumberLang: UILabel!{
+        didSet{
+            phoneNumberLang.text = "Phone Number".localizeed
+        }
+    }
+    
+    @IBOutlet weak var teachingLabelLng: UILabel!{
+        didSet{
+            teachingLabelLng.text = "Teaching Place".localizeed
+        }
+    }
+    
+    @IBOutlet weak var subjectLabelLang: UILabel!{
+        didSet{
+            subjectLabelLang.text = "Subject".localizeed
+        }
+    }
+    
+    @IBOutlet weak var cityLabelLanguage: UILabel!{
+        didSet{
+            cityLabelLanguage.text = "City".localizeed
+        }
+    }
+    
+    @IBOutlet weak var discreptionLabelLanguage: UILabel!{
+        didSet{
+            discreptionLabelLanguage.text = "Brife about me".localizeed
+        }
+    }
+    
     }
 
 extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

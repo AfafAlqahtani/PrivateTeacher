@@ -28,4 +28,23 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBOutlet weak var emailLabelLanguage2: UILabel!{
+        didSet{
+            emailLabelLanguage2.text = "Email".localizeed
+            
+        }
+    }
+    
+    @IBOutlet weak var passwordLabelLanguagee: UILabel!{
+        didSet{
+            passwordLabelLanguagee.text = "PassWord".localizeed
+        }
+    }
+    
+    @IBOutlet weak var sigiInBottunLangage: UIButton!{
+        didSet {
+            sigiInBottunLangage.setTitle(NSLocalizedString("Signin", tableName: "Localizable",  comment: ""), for: .normal)
+        }
+    }
 }

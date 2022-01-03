@@ -111,6 +111,37 @@ class RegisterViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var nameLableLanguage: UILabel!{
+        didSet{
+            nameLableLanguage.text = "Full Name".localizeed
+        }
+    }
+    
+    @IBOutlet weak var emailLabelLanguage: UILabel!{
+        didSet {
+            emailLabelLanguage.text = "Email".localizeed
+        }
+    }
+    
+    @IBOutlet weak var passwordLabelLanguage: UILabel!{
+        didSet {
+            passwordLabelLanguage.text = "PassWord".localizeed
+        }
+    }
+    
+   
+    @IBOutlet weak var passwordLabelLanguage2: UITextField!{
+        didSet {
+            passwordLabelLanguage2.text = "PassWord".localizeed
+        }
+    }
+
+    @IBOutlet weak var rigesterLabelLanguage: UIButton!{
+        didSet{
+            rigesterLabelLanguage.setTitle(NSLocalizedString("Register", tableName: "Localizable",  comment: ""), for: .normal)
+        }
+    }
+    
     }
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     

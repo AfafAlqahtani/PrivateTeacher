@@ -12,10 +12,9 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var filteredPost: [Post] = []
     var selectedPostImage:UIImage?
-//    var filterePosts: [String]!
    
     let searchController = UISearchController(searchResultsController: nil)
-//    @IBOutlet weak var searchBar: UISearchBar!
+
     
     @IBOutlet weak var postsTableView: UITableView! {
         didSet {
@@ -23,11 +22,7 @@ class HomeViewController: UIViewController {
            
             postsTableView.delegate = self
             postsTableView.dataSource = self
-           
-//            searchBar.delegate = self
-                
-            
-//            postsTableView.register(UINib(nibName: "PostCellViewController", bundle: nil), forCellReuseIdentifier: "PostCellViewController")
+ 
         }
     }
     
@@ -42,24 +37,7 @@ class HomeViewController: UIViewController {
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
         
-//        filterePosts = posts
-//        postsTableView.removeFromSuperview()
-//        if posts.count == 0 {
-//            postsTableView.isHidden = true
-//            let imgErrorPhoto = UIImageView(frame: CGRect(x: 50, y: 100, width: self.view.frame.width - 100, height: 200))
-//            imgErrorPhoto.image = UIImage(systemName: "icloud.slash")
-//            imgErrorPhoto.tintColor = UIColor.gray
-//            self.view.addSubview(imgErrorPhoto)
-//
-//            let lblMsg = UILabel(frame: CGRect(x: imgErrorPhoto.frame.minX, y: imgErrorPhoto.frame.maxX + 15, width: imgErrorPhoto.frame.width, height: 30))
-//
-//
-//            lblMsg.text = "No Data to Display"
-//            lblMsg.textAlignment = .center
-//            self.view.addSubview(lblMsg)
-//
-//        }
-        // Do any additional setup after loading the view.
+        
     }
     func getPosts() {
         let ref = Firestore.firestore()
@@ -142,23 +120,9 @@ extension HomeViewController: UITableViewDataSource {
         
         return cell.configure(with: posts[indexPath.row])
     }
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        filterePosts = []
-//        if searchText == "" {
-//            filterePosts = posts
-//        }
-            
-//        for information in posts {
-//            if  information.lowercased().contains(searchText.lowercased()) {
-//                filterePosts.append(information)
-//            }
-//        self.postsTableView.reloadData()
-//
-//
-//    }
-    
+
 }
-//}
+
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
@@ -176,28 +140,13 @@ extension HomeViewController: UITableViewDelegate{
         }
     }
 }
-//extension HomeViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        filteredPost = posts.filter({ selectedPost in
-//            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased())
-//        })
-//filteredPost.append(posts.filter({ selectedPost in
-//            return selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased())
-//        })
-//
-//filteredPost.append(posts.filter({ selectedPost in
-//            return selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased())
-//        })
-//        postsTableView.reloadData()
-//
-//    }
-//        }
+
         
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredPost = posts.filter({ selectedPost in
-            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased())
+            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.user.name.lowercased().contains(searchController.searchBar.text!.lowercased())
         })
         postsTableView.reloadData()
 

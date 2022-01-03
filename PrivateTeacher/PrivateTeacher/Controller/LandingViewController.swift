@@ -16,21 +16,19 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("landingView Controller is setting")
     }
 
     @IBOutlet weak var registerButtonLocalized: UIButton!{
         
         didSet {
-            registerButtonLocalized.setTitle("Register", for: .normal)
-                }
+            registerButtonLocalized.setTitle(NSLocalizedString("Register", tableName: "Localizable",  comment: ""), for: .normal)
+        }
             }
     
     @IBOutlet weak var LogInBottun: UIButton!{
         didSet{
-            LogInBottun.setTitle("Log In", for: .normal)
-          }
-    
+            LogInBottun.setTitle(NSLocalizedString("Log In", tableName: "Localizable",  comment: ""), for: .normal)
+        }
       }
     
     @IBOutlet weak var registerNoteLabel: UILabel!{
@@ -43,23 +41,22 @@ class LandingViewController: UIViewController {
 }
 
 
-    @IBOutlet weak var languageChangeOtlit: UISegmentedControl!{
-    
-    
+    @IBOutlet weak var languageChangeOtlit: UISegmentedControl!
+    {
     didSet {
         if let lang = UserDefaults.standard.string(forKey: "currentLanguage") {
             switch lang {
-            case "Arabic":
+            case "ar":
                 languageChangeOtlit.selectedSegmentIndex = 0
-            case "Enlish":
+            case "en":
                 languageChangeOtlit.selectedSegmentIndex = 1
-            case "Frinsh":
+            case "fr":
                 languageChangeOtlit.selectedSegmentIndex = 2
             default:
                 let localLang =  Locale.current.languageCode
-                 if localLang == "Arabic" {
+                 if localLang == "ar" {
                      languageChangeOtlit.selectedSegmentIndex = 0
-                 } else if localLang == "Frinsh"{
+                 } else if localLang == "fr" {
                      languageChangeOtlit.selectedSegmentIndex = 2
                  }else {
                      languageChangeOtlit.selectedSegmentIndex = 1
@@ -70,9 +67,9 @@ class LandingViewController: UIViewController {
         }else {
             let localLang =  Locale.current.languageCode
 //            UserDefaults.standard.set(localLang, forKey: "AppleLanguages")
-             if localLang == "Arabic" {
+             if localLang == "ar" {
                  languageChangeOtlit.selectedSegmentIndex = 0
-             } else if localLang == "Frinsh"{
+             } else if localLang == "fr" {
                  languageChangeOtlit.selectedSegmentIndex = 2
              }else {
                  languageChangeOtlit.selectedSegmentIndex = 1
@@ -81,25 +78,24 @@ class LandingViewController: UIViewController {
     }
     }
 
-
-@IBAction func languageChangeAction(_ sender: UISegmentedControl) {
-    if let lang = sender.titleForSegment(at:sender.selectedSegmentIndex)?.lowercased() {
-        UserDefaults.standard.set(lang, forKey: "currentLanguage")
-//        if lang == "Arabic" {
-//            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-//        }else {
-//            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-//        }
-//        UserDefaults.standard.set(lang, forKey: "currentLanguage")
-        Bundle.setLanguage(lang)
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let sceneDelegate = windowScene.delegate as? SceneDelegate {
-            sceneDelegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+    @IBAction func languageChanged(_ sender: UISegmentedControl) {
+        if let lang = sender.titleForSegment(at:sender.selectedSegmentIndex)?.lowercased() {
+            UserDefaults.standard.set(lang, forKey: "currentLanguage")
+    //        if lang == "Arabic" {
+    //            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+    //        }else {
+    //            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+    //        }
+    //        UserDefaults.standard.set(lang, forKey: "currentLanguage")
+            Bundle.setLanguage(lang)
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let sceneDelegate = windowScene.delegate as? SceneDelegate {
+                sceneDelegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+            }
         }
     }
-
-}
+    
 }
 
 extension String {
