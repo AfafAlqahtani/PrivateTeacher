@@ -11,6 +11,7 @@ import Firebase
 class RegisterViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
             userImageView.layer.borderColor = UIColor.systemGreen.cgColor
@@ -28,13 +29,17 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    
     @IBAction func handleRegister(_ sender: Any) {
+        
+       
         
         if let image = userImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.25),
@@ -86,6 +91,7 @@ class RegisterViewController: UIViewController {
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {
                                         Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                        
                                         Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                         print("Registration Database error",error.localizedDescription)
                                     }else {

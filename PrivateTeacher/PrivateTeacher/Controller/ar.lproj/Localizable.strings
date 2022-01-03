@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  PrivateTeacher
+
+  Created by Afaf Yahya on 29/05/1443 AH.
+  
+*/
+
+
+"If you ara a new user, please register" = "إذا كنت مستخدم جديد يرجى التسجيل";
+"Full Name" = "الإسم كامل";
+"Email" = "الإيميل";
+"PassWord" = "كلمة المرور";
+"PassWord" = "كلمة المرور";
+"Register" = "تسجيل جديد";
+"Log In" = "تسجيل دخول";
+"Signin" = "تسجيل الدخول";
+"Add an ad" = "أضف إعلان";
+"Stage" = "المرحلة الدراسية";
+"Gender" = "الجنس";
+"Phone Number" = "رقم الجوال";
+"Teaching Place" = "مكان التدريس";
+"Subject" = "المادة";
+"City" = "المدينة";
+"Brife about me" = "موجز عني";
+
+

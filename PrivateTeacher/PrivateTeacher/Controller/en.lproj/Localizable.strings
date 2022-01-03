@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  PrivateTeacher
+
+  Created by Afaf Yahya on 29/05/1443 AH.
+  
+*/
+"If you ara a new user, please register" = "If you ara a new user, please register";
+"Full Name" = "Full Name";
+"Email" = "Email";
+"PassWord" = "Password";
+"PassWord" = "Password";
+"Register" = "Register";
+"Log In" = "Log In";
+"Signin" = "Signin";
+"Add an ad" = "Add an ad";
+"Stage" = "Stage";
+"Gender" = "Gender";
+"Phone Number" = "Phone Number";
+"Teaching Place" = "Teaching Place";
+"Subject" = "Subject";
+"City" = "City";
+"Brife about me" = "Brife about me";

@@ -5,8 +5,8 @@
 /* Class = "UILabel"; text = "Subject"; ObjectID = "4pD-og-ZkX"; */
 "4pD-og-ZkX.text" = "Subject";
 
-/* Class = "UIButton"; configuration.title = "Ad Teacher"; ObjectID = "5kl-eq-dtn"; */
-"5kl-eq-dtn.configuration.title" = "Ad Teacher";
+/* Class = "UIButton"; configuration.title = "Add an ad"; ObjectID = "5kl-eq-dtn"; */
+"5kl-eq-dtn.configuration.title" = "Add an ad";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5kl-eq-dtn"; */
 "5kl-eq-dtn.normalTitle" = "Button";
@@ -14,8 +14,8 @@
 /* Class = "UILabel"; text = "Phone Number"; ObjectID = "6fg-Gl-gba"; */
 "6fg-Gl-gba.text" = "Phone Number";
 
-/* Class = "UILabel"; text = "if you are a new user, please register"; ObjectID = "BD6-O9-hjh"; */
-"BD6-O9-hjh.text" = "if you are a new user, please register";
+/* Class = "UILabel"; text = "If you ara a new user, please register"; ObjectID = "BD6-O9-hjh"; */
+"BD6-O9-hjh.text" = "If you ara a new user, please register";
 
 /* Class = "UILabel"; text = "Subject"; ObjectID = "BRz-PR-hnA"; */
 "BRz-PR-hnA.text" = "Subject";
@@ -46,6 +46,12 @@
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jfx-yU-XL7"; */
 "Jfx-yU-XL7.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "English"; ObjectID = "K9t-i2-X9s"; */
+"K9t-i2-X9s.configuration.title" = "English";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "K9t-i2-X9s"; */
+"K9t-i2-X9s.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Gender"; ObjectID = "KrB-lm-taN"; */
 "KrB-lm-taN.text" = "Gender";
@@ -95,20 +101,17 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "alL-Vf-Wqr"; */
 "alL-Vf-Wqr.normalTitle" = "Button";
 
+/* Class = "UIButton"; configuration.title = "Frinch"; ObjectID = "bPJ-SK-KJy"; */
+"bPJ-SK-KJy.configuration.title" = "Frinch";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bPJ-SK-KJy"; */
+"bPJ-SK-KJy.normalTitle" = "Button";
+
 /* Class = "UILabel"; text = "Brife about me"; ObjectID = "cSG-bf-7db"; */
 "cSG-bf-7db.text" = "Brife about me";
 
 /* Class = "UILabel"; text = "Password"; ObjectID = "dgB-Fs-XHN"; */
 "dgB-Fs-XHN.text" = "Password";
-
-/* Class = "UISegmentedControl"; fgD-oC-uwQ.segmentTitles[0] = "Arabic"; ObjectID = "fgD-oC-uwQ"; */
-"fgD-oC-uwQ.segmentTitles[0]" = "Arabic";
-
-/* Class = "UISegmentedControl"; fgD-oC-uwQ.segmentTitles[1] = "English"; ObjectID = "fgD-oC-uwQ"; */
-"fgD-oC-uwQ.segmentTitles[1]" = "English";
-
-/* Class = "UISegmentedControl"; fgD-oC-uwQ.segmentTitles[2] = "Frinsh"; ObjectID = "fgD-oC-uwQ"; */
-"fgD-oC-uwQ.segmentTitles[2]" = "Frinsh";
 
 /* Class = "UILabel"; text = "Teaching Place"; ObjectID = "gQS-wT-zQ9"; */
 "gQS-wT-zQ9.text" = "Teaching Place";
@@ -137,14 +140,20 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "rsw-Ex-snA"; */
 "rsw-Ex-snA.text" = "Label";
 
+/* Class = "UIButton"; configuration.title = "Arabic"; ObjectID = "sJe-5f-eTO"; */
+"sJe-5f-eTO.configuration.title" = "Arabic";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sJe-5f-eTO"; */
+"sJe-5f-eTO.normalTitle" = "Button";
+
 /* Class = "UIButton"; configuration.title = "Logout"; ObjectID = "tXi-W3-tat"; */
 "tXi-W3-tat.configuration.title" = "Logout";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tXi-W3-tat"; */
 "tXi-W3-tat.normalTitle" = "Button";
 
-/* Class = "UIButton"; configuration.title = "LogIN"; ObjectID = "yOD-aq-aHo"; */
-"yOD-aq-aHo.configuration.title" = "LogIN";
+/* Class = "UIButton"; configuration.title = "Log In"; ObjectID = "yOD-aq-aHo"; */
+"yOD-aq-aHo.configuration.title" = "Log In";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yOD-aq-aHo"; */
 "yOD-aq-aHo.normalTitle" = "Button";
