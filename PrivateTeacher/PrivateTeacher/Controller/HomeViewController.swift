@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
    
     let searchController = UISearchController(searchResultsController: nil)
 
+    @IBOutlet weak var backView: UIView!{
+        didSet{
+            backView.layer.shadowColor = UIColor.gray.cgColor
+        }
+    }
     
     @IBOutlet weak var postsTableView: UITableView! {
         didSet {
