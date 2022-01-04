@@ -23,7 +23,7 @@
 		A2880AF2277B2CEF00EA4B92 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */; };
 		A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */; };
 		A2A5EB53277AB985003ED3C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */; };
-		A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */; };
+		A2A5EB55277AC05A003ED3C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A5EB54277AC059003ED3C5 /* ProfileViewController.swift */; };
 		A2D61DFA2775993000F0F5C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DF92775993000F0F5C5 /* AppDelegate.swift */; };
 		A2D61DFC2775993000F0F5C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */; };
 		A2D61DFE2775993000F0F5C5 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D61DFD2775993000F0F5C5 /* LandingViewController.swift */; };
@@ -52,7 +52,7 @@
 		A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A2A5EB54277AC059003ED3C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A2D61DF62775993000F0F5C5 /* PrivateTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D61DF92775993000F0F5C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */,
 				A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */,
 				A267D7A1277B74D400E149B3 /* PostCellViewController.swift */,
-				A2A5EB54277AC059003ED3C5 /* SettingViewController.swift */,
+				A2A5EB54277AC059003ED3C5 /* ProfileViewController.swift */,
 				A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */,
 				A267D79F277B706600E149B3 /* DetailsViewController.swift */,
 				A267D7A5277C980800E149B3 /* Alert.swift */,
@@ -264,7 +264,7 @@
 				A21F14BF2779F59600D1034F /* ImageView.swift in Sources */,
 				A2A5EB53277AB985003ED3C5 /* RegisterViewController.swift in Sources */,
 				A2A5EB4F277A265D003ED3C5 /* HomeViewController.swift in Sources */,
-				A2A5EB55277AC05A003ED3C5 /* SettingViewController.swift in Sources */,
+				A2A5EB55277AC05A003ED3C5 /* ProfileViewController.swift in Sources */,
 				A2D61DFE2775993000F0F5C5 /* LandingViewController.swift in Sources */,
 				A267D7A2277B74D400E149B3 /* PostCellViewController.swift in Sources */,
 				A2D61DFA2775993000F0F5C5 /* AppDelegate.swift in Sources */,

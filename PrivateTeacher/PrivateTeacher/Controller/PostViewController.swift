@@ -10,6 +10,8 @@ import Firebase
 class PostViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
+    var selectUserImage:UIImage?
+    
     @IBOutlet weak var postImageView: UIImageView! {
         didSet {
             postImageView.isUserInteractionEnabled = true

@@ -10,6 +10,8 @@ import UIKit
 class DetailsViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
+    var selectUserImage:UIImage?
+    
     @IBOutlet weak var postStageLabel: UILabel!
     @IBOutlet weak var postGenderLabel: UILabel!
     @IBOutlet weak var postPhoneNumberLabel: UILabel!

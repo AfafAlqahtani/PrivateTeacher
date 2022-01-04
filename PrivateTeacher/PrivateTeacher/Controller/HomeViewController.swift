@@ -99,10 +99,13 @@ class HomeViewController: UIViewController {
                 let vc = segue.destination as! PostViewController
                 vc.selectedPost = selectedPost
                 vc.selectedPostImage = selectedPostImage
+                vc.selectUserImage = selectUseImage
             }else if identifier == "toDetailsVC" {
                 let vc = segue.destination as! DetailsViewController
                 vc.selectedPost = selectedPost
                 vc.selectedPostImage = selectedPostImage
+                vc.selectUserImage = selectUseImage
+                
             }
         }
      
@@ -131,7 +134,10 @@ extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PostCellViewController
         selectedPostImage = cell.postImageView.image
+        selectUseImage = cell.userImageView.image
         selectedPost = posts[indexPath.row]
+        print("AUTH",posts[indexPath.row].user.id)
+        
         if let currentUser = Auth.auth().currentUser,
            currentUser.uid == posts[indexPath.row].user.id{
           performSegue(withIdentifier: "toPostVC", sender: self)
