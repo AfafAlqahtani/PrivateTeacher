@@ -26,9 +26,16 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    
+    @IBOutlet weak var passwordTextField: UITextField!{
+        didSet{
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    @IBOutlet weak var confirmPasswordTextField: UITextField!{
+        didSet{
+            confirmPasswordTextField.isSecureTextEntry = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,12 +142,14 @@ class RegisterViewController: UIViewController {
             passwordLabelLanguage2.text = "PassWord".localizeed
         }
     }
-
+    
+    
     @IBOutlet weak var rigesterLabelLanguage: UIButton!{
         didSet{
             rigesterLabelLanguage.setTitle(NSLocalizedString("Register", tableName: "Localizable",  comment: ""), for: .normal)
         }
     }
+    
     
     }
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

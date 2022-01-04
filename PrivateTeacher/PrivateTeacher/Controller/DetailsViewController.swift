@@ -23,17 +23,20 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{
+            print("!!!!!!!!!!!!!!! Post Data",selectedPost)
             postStageLabel.text = selectedPost.stage
             postSubjectLabel.text = selectedPost.subject
             postCityLabel.text = selectedPost.city
-            postGenderLabel.text = selectedPost.user.gender
-            postPhoneNumberLabel.text = selectedPost.user.phoneNumber
-            postTeachingPlaceLabel.text = selectedPost.user.teachingPlace
-            postDescriptionLabel.text = selectedPost.user.description
+            postGenderLabel.text = selectedPost.gender
+            postPhoneNumberLabel.text = selectedPost.phoneNumber
+            postTeachingPlaceLabel.text = selectedPost.teachingPlace
+            postDescriptionLabel.text = selectedPost.description
             postImageView.image = selectedImage
         }
         // Do any additional setup after loading the view.
     }
+    
+    
     
     @IBOutlet weak var stageLabelLanguage2: UILabel!{
         didSet{

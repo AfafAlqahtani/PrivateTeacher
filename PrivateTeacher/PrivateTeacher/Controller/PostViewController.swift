@@ -32,18 +32,20 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         if let selectedPost = selectedPost,
         let selectedImage = selectedPostImage{
+            print("!!!!!!!!!!! POST DATA",selectedPost)
             stageTextFielf.text = selectedPost.stage
-            genderTextField.text = selectedPost.user.gender
-            phoneNumberLang.text = selectedPost.user.phoneNumber
+            genderTextField.text = selectedPost.gender
+            phoneNumberTextField.text = selectedPost.phoneNumber
             subjectTextField.text = selectedPost.subject
+            teachingPlaceTextField.text = selectedPost.teachingPlace
             cityTextField.text = selectedPost.city
             postImageView.image = selectedImage
-            descriptionTextField.text = selectedPost.user.description
-            actionButton.setTitle("Update Post", for: .normal)
+            descriptionTextField.text = selectedPost.description
+            actionButton.setTitle("Update Post".localizeed, for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
             self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
-            actionButton.setTitle("Add Post", for: .normal)
+            actionButton.setTitle("Add Post".localizeed, for: .normal)
             self.navigationItem.rightBarButtonItem = nil
             
         }
@@ -81,9 +83,10 @@ class PostViewController: UIViewController {
            let stage = stageTextFielf.text,
            let subject = subjectTextField.text,
            let city = cityTextField.text,
-//           let genderTextField = genderTextField.text,
-//           let phoneNumberTextField = phoneNumberTextField.text,
-//           let descriptionTextField = descriptionTextField.text,
+           let gender = genderTextField.text,
+           let phoneNumber = phoneNumberTextField.text,
+           let description = descriptionTextField.text,
+           let teachingPlace = teachingPlaceTextField.text,
 //
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
@@ -112,6 +115,10 @@ class PostViewController: UIViewController {
                                 "stage":stage,
                                 "subject":subject,
                                 "city":city,
+                                "gender":gender,
+                                "phoneNumber":phoneNumber,
+                                "description":description,
+                                "teachingPlace":teachingPlace,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":selectedPost.createdAt ?? FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()
@@ -122,6 +129,10 @@ class PostViewController: UIViewController {
                                 "stage":stage,
                                 "subject":subject,
                                 "city":city,
+                                "gender":gender,
+                                "teachingPlace":teachingPlace,
+                                "phoneNumber":phoneNumber,
+                                "description":description,
                                 "imageUrl":url.absoluteString,
                                 "createdAt":FieldValue.serverTimestamp(),
                                 "updatedAt": FieldValue.serverTimestamp()

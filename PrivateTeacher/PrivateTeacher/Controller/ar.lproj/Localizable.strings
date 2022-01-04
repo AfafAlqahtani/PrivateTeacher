@@ -22,5 +22,6 @@
 "Subject" = "المادة";
 "City" = "المدينة";
 "Brife about me" = "موجز عني";
-
-
+"Update Post" = "تحديث";
+"Add Post" = "اضافة";
+"logout" = "تسجيل خروج";

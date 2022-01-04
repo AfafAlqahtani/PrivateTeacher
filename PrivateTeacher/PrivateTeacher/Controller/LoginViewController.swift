@@ -11,7 +11,11 @@ class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!{
+        didSet{
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     
     @IBAction func handleLogin(_ sender: Any) {
         if let email = emailTextField.text,

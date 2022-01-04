@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var filteredPost: [Post] = []
     var selectedPostImage:UIImage?
+    var selectUseImage:UIImage?
    
     let searchController = UISearchController(searchResultsController: nil)
 
