@@ -17,6 +17,12 @@ class PostViewController: UIViewController {
             postImageView.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
             postImageView.addGestureRecognizer(tapGesture)
+            
+//            select image
+            postImageView.layer.borderColor = UIColor.systemCyan.cgColor
+            postImageView.layer.borderWidth = 3.0
+            postImageView.layer.masksToBounds = true
+            postImageView.isUserInteractionEnabled = true
         }
         
     }
@@ -27,7 +33,7 @@ class PostViewController: UIViewController {
                imageShow.layer.borderWidth = 0
                imageShow.layer.cornerRadius = 20
                        imageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-           //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+
                imageShow.layer.masksToBounds = true
                imageShow.isUserInteractionEnabled = true
         }
@@ -39,7 +45,6 @@ class PostViewController: UIViewController {
                        viewOfImageShow.layer.borderWidth = 0
                        viewOfImageShow.layer.cornerRadius = 20
                                viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-                   //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
                        viewOfImageShow.layer.masksToBounds = true
                        viewOfImageShow.isUserInteractionEnabled = true
                   }

@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         //        Styl corner to the view
         self.viewoutlit.layer.cornerRadius = 15
         
-        //        Shadow To Label
+        //        Shadow To view
         viewoutlit.layer.shadowOffset = CGSize(width: 10, height: 10)
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3

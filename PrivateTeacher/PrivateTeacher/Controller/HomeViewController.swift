@@ -33,6 +33,11 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var textLabel: UILabel!{
+        didSet{
+            textLabel.text = "Advertisements".localizeed
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()

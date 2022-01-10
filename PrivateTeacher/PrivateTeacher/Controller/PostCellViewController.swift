@@ -73,6 +73,19 @@ class PostCellViewController: UITableViewCell {
             userImageView.isUserInteractionEnabled = true
             
     }
+    
+    
+    @IBOutlet weak var backView: UIView!{
+        didSet{
+
+            backView.layer.shadowOffset = CGSize(width: 10, height: 10)
+            backView.layer.shadowRadius = 5
+            backView.layer.shadowOpacity = 0.3
+            
+            self.backView.layer.cornerRadius = 15
+
+        }
+    }
 }
 
 
