@@ -15,12 +15,13 @@ class HomeViewController: UIViewController {
     var selectUseImage:UIImage?
    
     let searchController = UISearchController(searchResultsController: nil)
-
-    @IBOutlet weak var backView: UIView!{
-        didSet{
-            backView.layer.shadowColor = UIColor.gray.cgColor
-        }
-    }
+//
+//    @IBOutlet weak var viewShow: UIView!
+//    @IBOutlet weak var backView: UIView!{
+//        didSet{
+//            backView.layer.shadowColor = UIColor.gray.cgColor
+//        }
+//    }
     
     @IBOutlet weak var postsTableView: UITableView! {
         didSet {
@@ -43,6 +44,15 @@ class HomeViewController: UIViewController {
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
         
+        
+        //        Styl corner to the view
+//        self.viewShow.layer.cornerRadius = 15
+        
+        //        Shadow To Label
+//        viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
+//        viewShow.layer.shadowRadius = 5
+//        viewShow.layer.shadowOpacity = 0.3
+//        
         
     }
     func getPosts() {
@@ -134,7 +144,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 350
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PostCellViewController

@@ -11,10 +11,23 @@ class LandingViewController: UIViewController {
     
     var transparentView = UIView()
 
-   
+    @IBOutlet weak var logoImage: UIImageView!
+    
+    @IBOutlet weak var viewShow: UIView!
+       
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //        Styl corner to the view
+        self.viewShow.layer.cornerRadius = 15
+        self.logoImage.layer.cornerRadius = 30
+        
+        //        Shadow To Label
+        viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
+        viewShow.layer.shadowRadius = 5
+        viewShow.layer.shadowOpacity = 0.3
         
     }
 
@@ -24,6 +37,12 @@ class LandingViewController: UIViewController {
             registerButtonLocalized.setTitle(NSLocalizedString("Register", tableName: "Localizable",  comment: ""), for: .normal)
         }
             }
+    @IBOutlet weak var logoLabel: UILabel!{
+        didSet{
+            logoLabel.text = "Praivate Teacher".localizeed
+        }
+    }
+    
     
     @IBOutlet weak var LogInBottun: UIButton!{
         didSet{
@@ -48,8 +67,11 @@ class LandingViewController: UIViewController {
             switch lang {
             case "ar":
                 languageChangeOtlit.selectedSegmentIndex = 0
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+               
             case "en":
                 languageChangeOtlit.selectedSegmentIndex = 1
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
             case "fr":
                 languageChangeOtlit.selectedSegmentIndex = 2
             default:

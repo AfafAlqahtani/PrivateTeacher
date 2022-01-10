@@ -12,9 +12,34 @@ class RegisterViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var imageSshow: UIImageView!{
+        didSet{
+      imageSshow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+            imageSshow.layer.borderWidth = 0
+            imageSshow.layer.cornerRadius = 20
+            imageSshow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+  //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            imageSshow.layer.masksToBounds = true
+            imageSshow.isUserInteractionEnabled = true
+          }
+    }
+    @IBOutlet weak var viewoutlit: UIView!
+    
+    @IBOutlet weak var viewOfImageShow: UIView!{
+        didSet{
+      viewOfImageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+            viewOfImageShow.layer.borderWidth = 0
+            viewOfImageShow.layer.cornerRadius = 20
+            viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+  //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            viewOfImageShow.layer.masksToBounds = true
+            viewOfImageShow.isUserInteractionEnabled = true
+          }
+    }
+    
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {
-            userImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            userImageView.layer.borderColor = UIColor.systemCyan.cgColor
             userImageView.layer.borderWidth = 3.0
             userImageView.layer.cornerRadius = userImageView.bounds.height / 2
             userImageView.layer.masksToBounds = true
@@ -25,7 +50,10 @@ class RegisterViewController: UIViewController {
     }
     
     @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
             passwordTextField.isSecureTextEntry = true
@@ -41,6 +69,14 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         imagePickerController.delegate = self
         // Do any additional setup after loading the view.
+        
+        //        Styl corner to the view
+        self.viewoutlit.layer.cornerRadius = 20
+        
+        //        Shadow To Label
+        viewoutlit.layer.shadowOffset = CGSize(width: 10, height: 10)
+        viewoutlit.layer.shadowRadius = 5
+        viewoutlit.layer.shadowOpacity = 0.3
     }
     
     
@@ -52,6 +88,7 @@ class RegisterViewController: UIViewController {
            let imageData = image.jpegData(compressionQuality: 0.25),
            let name = nameTextField.text,
            let email = emailTextField.text,
+           let phoneNumber = phoneNumberTextField.text,
            let password = passwordTextField.text,
            let confirmPassword = confirmPasswordTextField.text,
            password == confirmPassword {
@@ -70,9 +107,7 @@ class RegisterViewController: UIViewController {
                         if let error = error {
                             Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
                             Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
-                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                            print("Registration Storage Error",error.localizedDescription)
+                            print("Registration Auth Error",error.localizedDescription)
                         }
                         storageRef.downloadURL { url, error in
                             if let error = error {
@@ -89,7 +124,7 @@ class RegisterViewController: UIViewController {
                                     "email":email,
                                     "imageUrl":url.absoluteString,
                                     "gender" :"f",
-                                    "phoneNumber":"6767",
+                                    "phoneNumber":phoneNumber,
                                     "subject":"jk",
                                     "teachingPlace":"jj",
                                     "city":"l",
@@ -98,7 +133,6 @@ class RegisterViewController: UIViewController {
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {
                                         Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
-                                        
                                         Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                         print("Registration Database error",error.localizedDescription)
                                     }else {
@@ -114,6 +148,11 @@ class RegisterViewController: UIViewController {
                     }
                 }
             }
+//        }else{
+//            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+            
+            
+            
         }
         
     }
@@ -150,6 +189,11 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var phoneNumberLabel: UILabel!{
+        didSet{
+            phoneNumberLabel.text = "Phone Number".localizeed
+        }
+    }
     
     }
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

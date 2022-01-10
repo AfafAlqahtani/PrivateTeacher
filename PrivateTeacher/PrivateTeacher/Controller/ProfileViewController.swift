@@ -8,6 +8,49 @@
 import UIKit
 import Firebase
 class ProfileViewController: UIViewController {
+    
+    var posts = [Post]()
+    var selectedPost:Post?
+//    var filteredPost: [Post] = []
+    var selectedPostImage:UIImage?
+    var selectUseImage:UIImage?
+    
+    @IBOutlet weak var imageShow: UIImageView!{
+        didSet {
+            imageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+               imageShow.layer.borderWidth = 0
+               imageShow.layer.cornerRadius = 20
+                       imageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+           //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+               imageShow.layer.masksToBounds = true
+               imageShow.isUserInteractionEnabled = true
+        }
+    }
+    @IBOutlet weak var viewOfImageShow: UIView!{
+        didSet{
+            viewOfImageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+               viewOfImageShow.layer.borderWidth = 0
+               viewOfImageShow.layer.cornerRadius = 20
+                       viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+           //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+               viewOfImageShow.layer.masksToBounds = true
+               viewOfImageShow.isUserInteractionEnabled = true
+        }
+    }
+    
+    
+    @IBOutlet var viewShow: UIView!{
+        didSet{
+            //        Styl corner to the view
+            self.viewShow.layer.cornerRadius = 15
+          
+            
+            //        Shadow To Label
+            viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
+            viewShow.layer.shadowRadius = 5
+            viewShow.layer.shadowOpacity = 0.3
+        }
+    }
     @IBAction func handleLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -27,15 +70,28 @@ class ProfileViewController: UIViewController {
         }
 }
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!{
+        didSet{
+            userImageView.layer.borderColor = UIColor.systemCyan.cgColor
+            userImageView.layer.borderWidth = 3.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
+            userImageView.layer.masksToBounds = true
+            userImageView.isUserInteractionEnabled = true
+        }
+    }
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userPhoneNumberLabel: UILabel!
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getUser()
+        
+
     }
     func getUser(){
         let ref = Firestore.firestore()
@@ -51,8 +107,10 @@ class ProfileViewController: UIViewController {
                     self.userNameLabel.text = user.name
                     self.userEmailLabel.text = user.email
                     self.userPhoneNumberLabel.text = user.phoneNumber
+                    
                 }
             }
         }
     }
 }
+

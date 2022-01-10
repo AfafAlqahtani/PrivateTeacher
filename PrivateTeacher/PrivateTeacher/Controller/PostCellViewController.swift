@@ -14,11 +14,33 @@ class PostCellViewController: UITableViewCell {
     @IBOutlet weak var postSubjectLabel: UILabel!
     @IBOutlet weak var postCityLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!{
+        didSet{
+            userImageView.layer.borderColor = UIColor.systemCyan.cgColor
+            userImageView.layer.borderWidth = 3.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
+            userImageView.layer.masksToBounds = true
+            userImageView.isUserInteractionEnabled = true
+        }
+    }
+//
+    @IBOutlet weak var postProfileImage: UIImageView!
+    @IBOutlet weak var postProfileStageLabel: UILabel!
+    @IBOutlet weak var postProfileSubjectLabel: UILabel!
+    @IBOutlet weak var postProfileCityLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        //        Styl corner to the view
+//        self.viewShow.layer.cornerRadius = 15
+        
+        //        Shadow To Label
+//        viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
+//        viewShow.layer.shadowRadius = 5
+//        viewShow.layer.shadowOpacity = 0.3
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -36,10 +58,21 @@ class PostCellViewController: UITableViewCell {
         return self
     }
     
+    
+    @IBOutlet weak var viewShow: UIView!
+    
     override func prepareForReuse() {
         userImageView.image = nil
         postImageView.image = nil
+        
+       
+            userImageView.layer.borderColor = UIColor.systemBackground.cgColor
+            userImageView.layer.borderWidth = 3.0
+            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
+            userImageView.layer.masksToBounds = true
+            userImageView.isUserInteractionEnabled = true
+            
     }
 }
-    
+
 

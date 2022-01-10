@@ -20,6 +20,31 @@ class PostViewController: UIViewController {
         }
         
     }
+    
+    @IBOutlet weak var imageShow: UIImageView!{
+        didSet{
+            imageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+               imageShow.layer.borderWidth = 0
+               imageShow.layer.cornerRadius = 20
+                       imageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+           //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+               imageShow.layer.masksToBounds = true
+               imageShow.isUserInteractionEnabled = true
+        }
+    }
+    
+    @IBOutlet weak var viewOfImageShow: UIView!{
+        didSet{
+            viewOfImageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
+                       viewOfImageShow.layer.borderWidth = 0
+                       viewOfImageShow.layer.cornerRadius = 20
+                               viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+                   //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+                       viewOfImageShow.layer.masksToBounds = true
+                       viewOfImageShow.isUserInteractionEnabled = true
+                  }
+    }
+    
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var stageTextFielf: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -146,6 +171,7 @@ class PostViewController: UIViewController {
                             }
                             Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                             self.navigationController?.popViewController(animated: true)
+                            
                         }
                     }
                 }

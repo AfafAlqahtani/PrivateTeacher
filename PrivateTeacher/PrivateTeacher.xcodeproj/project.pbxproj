@@ -96,6 +96,7 @@
 			children = (
 				A2880AED277B070B00EA4B92 /* Post.swift */,
 				A2880AEF277B0AD700EA4B92 /* User.swift */,
+				A267D7A5277C980800E149B3 /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,7 +120,6 @@
 				A2A5EB54277AC059003ED3C5 /* ProfileViewController.swift */,
 				A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */,
 				A267D79F277B706600E149B3 /* DetailsViewController.swift */,
-				A267D7A5277C980800E149B3 /* Alert.swift */,
 				A267D7B52781896500E149B3 /* Bundel.swift */,
 				A2D61DF92775993000F0F5C5 /* AppDelegate.swift */,
 				A2D61DFB2775993000F0F5C5 /* SceneDelegate.swift */,
