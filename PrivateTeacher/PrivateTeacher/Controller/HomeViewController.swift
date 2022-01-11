@@ -15,13 +15,7 @@ class HomeViewController: UIViewController {
     var selectUseImage:UIImage?
    
     let searchController = UISearchController(searchResultsController: nil)
-//
-//    @IBOutlet weak var viewShow: UIView!
-//    @IBOutlet weak var backView: UIView!{
-//        didSet{
-//            backView.layer.shadowColor = UIColor.gray.cgColor
-//        }
-//    }
+
     
     @IBOutlet weak var postsTableView: UITableView! {
         didSet {
@@ -50,14 +44,7 @@ class HomeViewController: UIViewController {
         searchController.searchResultsUpdater = self
         
         
-        //        Styl corner to the view
-//        self.viewShow.layer.cornerRadius = 15
-        
-        //        Shadow To Label
-//        viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
-//        viewShow.layer.shadowRadius = 5
-//        viewShow.layer.shadowOpacity = 0.3
-//        
+       
         
     }
     func getPosts() {
@@ -173,7 +160,7 @@ extension HomeViewController: UITableViewDelegate{
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredPost = posts.filter({ selectedPost in
-            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.user.name.lowercased().contains(searchController.searchBar.text!.lowercased())
+            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased()) 
         })
         postsTableView.reloadData()
 

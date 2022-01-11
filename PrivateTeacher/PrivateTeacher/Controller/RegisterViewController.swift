@@ -132,8 +132,8 @@ class RegisterViewController: UIViewController {
                                 ]
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {
-                                        Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
-                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+//                                        Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+//                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                         print("Registration Database error",error.localizedDescription)
                                     }else {
                                         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
@@ -148,13 +148,11 @@ class RegisterViewController: UIViewController {
                     }
                 }
             }
-//        }else{
-//            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
             
-            
-            
+        }else{
+                Alert.showAlert(strTitle: "Error", strMessage: "Please enter your information", viewController: self)
         }
-        
+                
     }
     
     @IBOutlet weak var nameLableLanguage: UILabel!{

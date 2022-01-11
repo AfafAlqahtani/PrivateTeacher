@@ -55,7 +55,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var postTeachingPlaceLabel: UILabel!
     @IBOutlet weak var postSubjectLabel: UILabel!
     @IBOutlet weak var postCityLabel: UILabel!
-    @IBOutlet weak var postDescriptionLabel: UITextField!
+
+    @IBOutlet weak var postDescriptionLabel: UILabel!
+    
     @IBOutlet weak var userImageView: UIImageView! {
         didSet{
             userImageView.layer.borderColor = UIColor.systemCyan.cgColor
