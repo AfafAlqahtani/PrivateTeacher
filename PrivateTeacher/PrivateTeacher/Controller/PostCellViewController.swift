@@ -34,13 +34,11 @@ class PostCellViewController: UITableViewCell {
         super.awakeFromNib()
         
         
-        //        Styl corner to the view
-//        self.viewShow.layer.cornerRadius = 15
         
-        //        Shadow To Label
-//        viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
-//        viewShow.layer.shadowRadius = 5
-//        viewShow.layer.shadowOpacity = 0.3
+        //        hide keybord
+//                let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+//                tap.cancelsTouchesInView = false
+//                view.addGestureRecognizer(tap)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

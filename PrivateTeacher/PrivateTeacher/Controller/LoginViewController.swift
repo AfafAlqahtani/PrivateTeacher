@@ -46,6 +46,14 @@ class LoginViewController: UIViewController {
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
         
+//        hide kybord
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
     }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!{
@@ -92,5 +100,11 @@ class LoginViewController: UIViewController {
         didSet {
             sigiInBottunLangage.setTitle(NSLocalizedString("Signin", tableName: "Localizable",  comment: ""), for: .normal)
         }
+    }
+}
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

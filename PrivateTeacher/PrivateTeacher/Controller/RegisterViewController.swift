@@ -77,6 +77,19 @@ class RegisterViewController: UIViewController {
         viewoutlit.layer.shadowOffset = CGSize(width: 10, height: 10)
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
+        
+//        return keybord
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
+//        hide keybord
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
     }
     
     
@@ -232,4 +245,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
 }
+extension RegisterViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
 
