@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
              imageShow.layer.borderWidth = 0
              imageShow.layer.cornerRadius = 20
                      imageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-         //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+        
              imageShow.layer.masksToBounds = true
              imageShow.isUserInteractionEnabled = true
         }
@@ -46,15 +46,14 @@ class LoginViewController: UIViewController {
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
         
-//        keybord
-        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-////        hide kybord
-//        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//        
-//        emailTextField.delegate = self
-//        passwordTextField.delegate = self
+
+//        hide kybord
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
     }
     @IBOutlet weak var emailTextField: UITextField!
@@ -104,9 +103,9 @@ class LoginViewController: UIViewController {
         }
     }
 }
-//extension LoginViewController: UITextFieldDelegate{
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

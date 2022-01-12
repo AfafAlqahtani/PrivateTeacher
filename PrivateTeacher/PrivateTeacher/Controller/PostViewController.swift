@@ -50,6 +50,7 @@ class PostViewController: UIViewController {
                   }
     }
     
+    
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var stageTextFielf: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -82,6 +83,20 @@ class PostViewController: UIViewController {
             
         }
         // Do any additional setup after loading the view.
+        
+        stageTextFielf.delegate = self
+        genderTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        subjectTextField.delegate = self
+        teachingPlaceTextField.delegate = self
+        cityTextField.delegate = self
+        descriptionTextField.delegate = self
+        
+        //      hide kybord
+                let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+                tap.cancelsTouchesInView = false
+                view.addGestureRecognizer(tap)
+        
     }
     @objc func handleDelete (_ sender: UIBarButtonItem) {
         let ref = Firestore.firestore().collection("posts")
@@ -108,6 +123,17 @@ class PostViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var viewShow: UIView!{
+        didSet{
+            //        Styl corner to the view
+            self.viewShow.layer.cornerRadius = 15
+            
+            //        Shadow To view
+            viewShow.layer.shadowOffset = CGSize(width: 10, height: 10)
+            viewShow.layer.shadowRadius = 5
+            viewShow.layer.shadowOpacity = 0.3
+        }
+    }
     @IBAction func handleActionTouch(_ sender: Any) {
         
         if let image = postImageView.image,
@@ -265,4 +291,9 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
     
 }
 
-
+extension PostViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

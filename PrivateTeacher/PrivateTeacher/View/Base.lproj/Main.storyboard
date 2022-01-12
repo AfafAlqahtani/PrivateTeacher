@@ -575,10 +575,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r61-UX-AbS">
-                                <rect key="frame" x="15" y="79" width="345" height="557"/>
+                                <rect key="frame" x="15" y="75" width="345" height="534"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-v1-XZ5">
-                                        <rect key="frame" x="18" y="22" width="322" height="446.5"/>
+                                        <rect key="frame" x="20" y="19" width="322" height="446.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-Rm-p26">
                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="115"/>
@@ -738,7 +738,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="o4m-ky-IgR">
-                                                <rect key="frame" x="0.0" y="354" width="300" height="92.5"/>
+                                                <rect key="frame" x="0.0" y="354" width="317" height="92.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brife about me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSG-bf-7db">
                                                         <rect key="frame" x="0.0" y="0.0" width="119" height="20.5"/>
@@ -747,10 +747,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-xF-3fh">
-                                                        <rect key="frame" x="0.0" y="20.5" width="300" height="72"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="317" height="72"/>
                                                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="300" id="k1f-A2-Q5F"/>
+                                                            <constraint firstAttribute="width" constant="317" id="k1f-A2-Q5F"/>
                                                             <constraint firstAttribute="height" constant="72" id="meG-pn-Rjo"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -761,7 +761,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-cX-eOx">
-                                        <rect key="frame" x="63" y="496" width="200" height="31"/>
+                                        <rect key="frame" x="72" y="473" width="200" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="pY4-nA-a1f"/>
                                         </constraints>
@@ -780,12 +780,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstItem="pBy-v1-XZ5" firstAttribute="leading" secondItem="r61-UX-AbS" secondAttribute="leading" constant="18" id="5Lh-In-7IY"/>
+                                    <constraint firstItem="pBy-v1-XZ5" firstAttribute="leading" secondItem="r61-UX-AbS" secondAttribute="leading" constant="20" id="5Lh-In-7IY"/>
                                     <constraint firstItem="Zcj-cX-eOx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r61-UX-AbS" secondAttribute="leading" id="8Cu-VE-Xfv"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zcj-cX-eOx" secondAttribute="trailing" constant="82" id="nNs-Pl-vRz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zcj-cX-eOx" secondAttribute="trailing" constant="73" id="nNs-Pl-vRz"/>
                                     <constraint firstAttribute="bottom" secondItem="Zcj-cX-eOx" secondAttribute="bottom" constant="30" id="r2W-5Z-r4U"/>
-                                    <constraint firstItem="Zcj-cX-eOx" firstAttribute="top" secondItem="pBy-v1-XZ5" secondAttribute="bottom" constant="27.5" id="rNV-8T-dIT"/>
-                                    <constraint firstItem="pBy-v1-XZ5" firstAttribute="top" secondItem="r61-UX-AbS" secondAttribute="top" constant="22" id="xXT-QB-BYO"/>
+                                    <constraint firstItem="Zcj-cX-eOx" firstAttribute="top" secondItem="pBy-v1-XZ5" secondAttribute="bottom" constant="7.5" id="rNV-8T-dIT"/>
+                                    <constraint firstItem="pBy-v1-XZ5" firstAttribute="top" secondItem="r61-UX-AbS" secondAttribute="top" constant="19" id="xXT-QB-BYO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -794,7 +794,7 @@
                         <constraints>
                             <constraint firstItem="I4e-OM-XGL" firstAttribute="leading" secondItem="w0F-RI-FQE" secondAttribute="leading" id="0eN-WP-tjH"/>
                             <constraint firstItem="I4e-OM-XGL" firstAttribute="leading" secondItem="w0F-RI-FQE" secondAttribute="leading" id="1uh-X6-Oo5"/>
-                            <constraint firstItem="r61-UX-AbS" firstAttribute="top" secondItem="w0F-RI-FQE" secondAttribute="top" constant="35" id="2C0-cS-oHr"/>
+                            <constraint firstItem="r61-UX-AbS" firstAttribute="top" secondItem="w0F-RI-FQE" secondAttribute="top" constant="31" id="2C0-cS-oHr"/>
                             <constraint firstItem="w0F-RI-FQE" firstAttribute="trailing" secondItem="r61-UX-AbS" secondAttribute="trailing" constant="15" id="7qv-a2-mle"/>
                             <constraint firstItem="I4e-OM-XGL" firstAttribute="trailing" secondItem="w0F-RI-FQE" secondAttribute="trailing" id="A4E-1V-tTS"/>
                             <constraint firstItem="I4e-OM-XGL" firstAttribute="top" secondItem="GpH-4r-slb" secondAttribute="top" id="IlG-6B-fQd"/>
@@ -829,6 +829,7 @@
                         <outlet property="teachingLabelLng" destination="HAr-41-qLI" id="MYo-lF-11H"/>
                         <outlet property="teachingPlaceTextField" destination="eJU-Vu-qWX" id="HdD-ht-ECw"/>
                         <outlet property="viewOfImageShow" destination="P6u-dA-16b" id="1lX-VD-ZXX"/>
+                        <outlet property="viewShow" destination="r61-UX-AbS" id="SOI-I7-tRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeC-0L-CjC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

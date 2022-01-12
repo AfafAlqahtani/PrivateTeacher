@@ -128,6 +128,7 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellViewController") as! PostCellViewController
         let post = searchController.isActive ? filteredPost[indexPath.row]: posts[indexPath.row]
         cell.configure(with: post)
+        cell.selectionStyle = .none
         
         return cell.configure(with: posts[indexPath.row])
     }

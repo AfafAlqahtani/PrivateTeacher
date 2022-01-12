@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
             imageSshow.layer.borderWidth = 0
             imageSshow.layer.cornerRadius = 20
             imageSshow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-  //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+ 
             imageSshow.layer.masksToBounds = true
             imageSshow.isUserInteractionEnabled = true
           }
@@ -90,21 +90,19 @@ class RegisterViewController: UIViewController {
         viewoutlit.layer.shadowOffset = CGSize(width: 10, height: 10)
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
-        
-//        keybord
-        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
         
 ////        return keybord
-//        nameTextField.delegate = self
-//        emailTextField.delegate = self
-//        phoneNumberTextField.delegate = self
-//        passwordTextField.delegate = self
-//        confirmPasswordTextField.delegate = self
-//
-////        hide keybord
-//        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+
+//        hide keybord
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
         
     }
     
@@ -161,8 +159,7 @@ class RegisterViewController: UIViewController {
                                 ]
                                 db.collection("users").document(authResult.user.uid).setData(userData) { error in
                                     if let error = error {
-//                                        Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
-//                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+
                                         print("Registration Database error",error.localizedDescription)
                                     }else {
                                         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
@@ -261,11 +258,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
 }
-//extension RegisterViewController: UITextFieldDelegate{
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
+extension RegisterViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 
