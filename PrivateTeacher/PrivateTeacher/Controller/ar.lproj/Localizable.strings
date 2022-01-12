@@ -9,7 +9,7 @@
 
 "If you ara a new user, please register" = "إذا كنت مستخدم جديد يرجى التسجيل";
 "Full Name" = "الإسم كامل";
-"Email" = "الإيميل";
+"Email" =  "الإيميل";
 "PassWord" = "كلمة المرور";
 "Register" = "تسجيل جديد";
 "Log In" = "تسجيل دخول";
@@ -17,7 +17,7 @@
 "Add an ad" = "أضف إعلان";
 "Stage" = "المرحلة الدراسية";
 "Gender" = "الجنس";
-"Phone Number" = "رقم الجوال";
+"Phone Number" = "رقم الهاتف";
 "Teaching Place" = "مكان التدريس";
 "Subject" = "المادة";
 "City" = "المدينة";
@@ -28,3 +28,7 @@
 "Enter Your Name" = "أدخل إيميلك";
 "Praivate Teacher" = "مدرس خصوصي";
 "Advertisements" = "الإعلانات";
+"Enter Your Name" = "أدخل إسمك";
+"Enter Yor Email" = "أدخل إيميلك ";
+"Phone Number" = "رقم الهاتف";
+"Passwodr" = "كلمة المرور";

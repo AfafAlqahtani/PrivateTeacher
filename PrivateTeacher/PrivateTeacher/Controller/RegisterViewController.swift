@@ -49,14 +49,27 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!{
+        didSet{
+            nameTextField.placeholder = "Enter Your Name".localizeed
+        }
+    }
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!{
+        didSet{
+        emailTextField.placeholder = "Enter Yor Email".localizeed
+        }
+    }
     
-    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!{
+        didSet{
+            phoneNumberTextField.placeholder = "Phone Number".localizeed
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
             passwordTextField.isSecureTextEntry = true
+            passwordTextField.placeholder = "Passwodr".localizeed
         }
     }
     @IBOutlet weak var confirmPasswordTextField: UITextField!{
@@ -78,17 +91,20 @@ class RegisterViewController: UIViewController {
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
         
-//        return keybord
-        nameTextField.delegate = self
-        emailTextField.delegate = self
-        phoneNumberTextField.delegate = self
-        passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
+//        keybord
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         
-//        hide keybord
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+////        return keybord
+//        nameTextField.delegate = self
+//        emailTextField.delegate = self
+//        phoneNumberTextField.delegate = self
+//        passwordTextField.delegate = self
+//        confirmPasswordTextField.delegate = self
+//
+////        hide keybord
+//        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+//        tap.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tap)
         
     }
     
@@ -245,11 +261,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         picker.dismiss(animated: true, completion: nil)
     }
 }
-extension RegisterViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
+//extension RegisterViewController: UITextFieldDelegate{
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}
 
 

@@ -46,13 +46,15 @@ class LoginViewController: UIViewController {
         viewoutlit.layer.shadowRadius = 5
         viewoutlit.layer.shadowOpacity = 0.3
         
-//        hide kybord
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-        
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+//        keybord
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+////        hide kybord
+//        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+//        tap.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tap)
+//        
+//        emailTextField.delegate = self
+//        passwordTextField.delegate = self
         
     }
     @IBOutlet weak var emailTextField: UITextField!
@@ -102,9 +104,9 @@ class LoginViewController: UIViewController {
         }
     }
 }
-extension LoginViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
+//extension LoginViewController: UITextFieldDelegate{
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}
