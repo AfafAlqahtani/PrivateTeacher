@@ -117,6 +117,10 @@ class HomeViewController: UIViewController {
         }
      
     }
+    //    to exit button
+        @IBAction func rootViewController(segue: UIStoryboardSegue){
+            print("Unwind to Root ViewController")
+        }
 }
 
 extension HomeViewController: UITableViewDataSource {

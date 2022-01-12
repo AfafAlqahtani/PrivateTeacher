@@ -181,6 +181,12 @@ class RegisterViewController: UIViewController {
                 
     }
     
+//    @IBOutlet weak var buttonShow: UIButton!
+      
+    
+     
+    
+    
     @IBOutlet weak var nameLableLanguage: UILabel!{
         didSet{
             nameLableLanguage.text = "Full Name".localizeed
