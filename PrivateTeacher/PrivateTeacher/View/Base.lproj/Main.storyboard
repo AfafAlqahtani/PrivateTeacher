@@ -25,9 +25,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="weS-DQ-N6G"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="ar"/>
-                                    <segment title="en"/>
-                                    <segment title="fr"/>
+                                    <segment title="AR"/>
+                                    <segment title="EN"/>
+                                    <segment title="FR"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" red="0.52883354968730545" green="0.70462595557841523" blue="0.76867932081222534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>

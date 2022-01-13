@@ -103,12 +103,12 @@ class LandingViewController: UIViewController {
     @IBAction func languageChanged(_ sender: UISegmentedControl) {
         if let lang = sender.titleForSegment(at:sender.selectedSegmentIndex)?.lowercased() {
             UserDefaults.standard.set(lang, forKey: "currentLanguage")
-    //        if lang == "Arabic" {
-    //            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-    //        }else {
-    //            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-    //        }
-    //        UserDefaults.standard.set(lang, forKey: "currentLanguage")
+            if lang == "ar" {
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            }else {
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            }
+            UserDefaults.standard.set(lang, forKey: "currentLanguage")
             Bundle.setLanguage(lang)
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
