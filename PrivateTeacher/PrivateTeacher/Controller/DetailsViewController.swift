@@ -24,6 +24,13 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var buttonShow: UIButton!{
+        didSet{
+            self.buttonShow.layer.cornerRadius = 25
+        }
+    }
+    
+    
     @IBOutlet weak var imageShow: UIImageView!{
         didSet{
             imageShow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor

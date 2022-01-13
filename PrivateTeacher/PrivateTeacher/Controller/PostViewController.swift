@@ -12,6 +12,11 @@ class PostViewController: UIViewController {
     var selectedPostImage:UIImage?
     var selectUserImage:UIImage?
     
+    @IBOutlet weak var exitButtonShow: UIButton!{
+        didSet{
+            self.exitButtonShow.layer.cornerRadius = 25
+        }
+    }
     @IBOutlet weak var postImageView: UIImageView! {
         didSet {
             postImageView.isUserInteractionEnabled = true

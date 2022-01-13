@@ -10,6 +10,12 @@ import Firebase
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var buttonShow: UIButton!{
+        didSet{
+            self.buttonShow.layer.cornerRadius = 25
+        }
+    }
+    
     @IBOutlet weak var viewoutlit: UIView!
     
     @IBOutlet weak var imageShow: UIImageView!{
@@ -29,13 +35,34 @@ class LoginViewController: UIViewController {
              viewOfImageShow.layer.borderWidth = 0
              viewOfImageShow.layer.cornerRadius = 20
                      viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-         //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+        
              viewOfImageShow.layer.masksToBounds = true
              viewOfImageShow.isUserInteractionEnabled = true
+            
         }
+    }
+    @IBOutlet weak var eyePassword: UIButton!
+    
+    @IBAction func eyePasswordAction(_ sender: UIButton) {
+        
+        passwordTextField.isSecureTextEntry.toggle()
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "eye.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        } else {
+            if let image = UIImage(systemName: "eye.slash.fill"){
+                sender.setImage(image, for: .normal)
+            }
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        eye password
+        passwordTextField.rightView = eyePassword
+                passwordTextField.rightViewMode = .whileEditing
         
         
         //        Styl corner to the view
@@ -56,10 +83,18 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         
     }
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!{
+        didSet{
+            emailTextField.placeholder = "Email".localizeed
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!{
         didSet{
+            
+            passwordTextField.placeholder = "PassWord".localizeed
+            
             passwordTextField.isSecureTextEntry = true
+            
         }
     }
     

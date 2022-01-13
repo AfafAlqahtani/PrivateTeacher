@@ -12,6 +12,11 @@ class RegisterViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var buttonShow: UIButton!{
+        didSet{
+            self.buttonShow.layer.cornerRadius = 25
+        }
+    }
     @IBOutlet weak var imageSshow: UIImageView!{
         didSet{
       imageSshow.layer.borderColor = UIColor.tertiarySystemBackground.cgColor
@@ -75,8 +80,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!{
         didSet{
             confirmPasswordTextField.isSecureTextEntry = true
+            confirmPasswordTextField.placeholder = "Passwodr again".localizeed
         }
     }
+    
+    @IBOutlet weak var eyePassword: UIButton!
+    
+    
+    @IBOutlet weak var eyeConfermaPassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +115,43 @@ class RegisterViewController: UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
+        passwordTextField.rightView = eyePassword
+                passwordTextField.rightViewMode = .whileEditing
+                
+                confirmPasswordTextField.rightView = eyeConfermaPassword
+                confirmPasswordTextField.rightViewMode = .whileEditing
+        
     }
+    
+    @IBAction func eyePas(_ sender: UIButton) {
+        passwordTextField.isSecureTextEntry.toggle()
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "eye.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        } else {
+            if let image = UIImage(systemName: "eye.slash.fill"){
+                sender.setImage(image, for: .normal)
+            }
+        }
+    }
+    
+    @IBAction func changePasswordVisibility(_ sender: UIButton) {
+        
+        confirmPasswordTextField.isSecureTextEntry.toggle()
+                if confirmPasswordTextField.isSecureTextEntry {
+                    if let image = UIImage(systemName: "eye.fill") {
+                        sender.setImage(image, for: .normal)
+                    }
+                } else {
+                    if let image = UIImage(systemName: "eye.slash.fill"){
+                        sender.setImage(image, for: .normal)
+                    }
+                }
+
+        
+    }
+    
     
     
     @IBAction func handleRegister(_ sender: Any) {
@@ -166,7 +213,9 @@ class RegisterViewController: UIViewController {
                                             vc.modalPresentationStyle = .fullScreen
                                             Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                                             self.present(vc, animated: true, completion: nil)
+                                            
                                         }
+                                        
                                     }
                                 }
                             }
@@ -181,10 +230,7 @@ class RegisterViewController: UIViewController {
                 
     }
     
-//    @IBOutlet weak var buttonShow: UIButton!
-      
-    
-     
+  
     
     
     @IBOutlet weak var nameLableLanguage: UILabel!{
