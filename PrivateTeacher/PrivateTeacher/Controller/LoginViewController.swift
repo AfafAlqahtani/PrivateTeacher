@@ -126,6 +126,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var signinLabel: UILabel!{
+        didSet{
+            signinLabel.text = "Signin".localizeed
+        }
+    }
+    
     @IBOutlet weak var passwordLabelLanguagee: UILabel!{
         didSet{
             passwordLabelLanguagee.text = "PassWord".localizeed
