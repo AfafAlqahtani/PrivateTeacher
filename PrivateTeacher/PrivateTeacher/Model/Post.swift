@@ -9,7 +9,6 @@ import Foundation
 import Firebase
 struct Post {
     var id = ""
-//    var teacherName = ""
     var stage = ""
     var subject = ""
     var city = ""

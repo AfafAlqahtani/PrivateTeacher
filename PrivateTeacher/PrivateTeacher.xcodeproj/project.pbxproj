@@ -106,6 +106,7 @@
 		A21F14B52779EAB000D1034F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A267D7A1277B74D400E149B3 /* PostCellViewController.swift */,
 				A2D61DFF2775993000F0F5C5 /* Main.storyboard */,
 			);
 			path = View;
@@ -118,7 +119,6 @@
 				A2A5EB52277AB985003ED3C5 /* RegisterViewController.swift */,
 				A2880AEB277AF0B200EA4B92 /* LoginViewController.swift */,
 				A2A5EB4E277A265D003ED3C5 /* HomeViewController.swift */,
-				A267D7A1277B74D400E149B3 /* PostCellViewController.swift */,
 				A2A5EB54277AC059003ED3C5 /* ProfileViewController.swift */,
 				A2880AF1277B2CEF00EA4B92 /* PostViewController.swift */,
 				A267D79F277B706600E149B3 /* DetailsViewController.swift */,

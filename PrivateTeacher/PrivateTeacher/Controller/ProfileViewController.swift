@@ -11,7 +11,6 @@ class ProfileViewController: UIViewController {
     
     var posts = [Post]()
     var selectedPost:Post?
-//    var filteredPost: [Post] = []
     var selectedPostImage:UIImage?
     var selectUseImage:UIImage?
     

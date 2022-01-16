@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPosts()
+        
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         
@@ -42,9 +43,6 @@ class HomeViewController: UIViewController {
         searchController.searchBar.placeholder = "Search"
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
-        
-        
-       
         
     }
     func getPosts() {
@@ -54,11 +52,13 @@ class HomeViewController: UIViewController {
                 print("DB ERROR Posts",error.localizedDescription)
             }
             if let snapshot = snapshot {
+                print("POST CANGES:",snapshot.documentChanges.count)
                 snapshot.documentChanges.forEach { diff in
-                    let post = diff.document.data()
+                    let postData = diff.document.data()
                     switch diff.type {
                     case .added :
-                        if let userId = post["userId"] as? String {
+                        
+                        if let userId = postData["userId"] as? String {
                             ref.collection("users").document(userId).getDocument { userSnapshot, error in
                                 if let error = error {
                                     print("ERROR user Data",error.localizedDescription)
@@ -67,39 +67,52 @@ class HomeViewController: UIViewController {
                                 if let userSnapshot = userSnapshot,
                                    let userData = userSnapshot.data(){
                                     let user = User(dict:userData)
-                                    let post = Post(dict:post,id:diff.document.documentID,user:user)
-                                    self.posts.insert(post, at: 0)
-                                    DispatchQueue.main.async {
-                                        self.postsTableView.reloadData()
+                                    let post = Post(dict:postData,id:diff.document.documentID,user:user)
+                                    self.postsTableView.beginUpdates()
+                                    if snapshot.documentChanges.count != 1 {
+                                        self.posts.append(post)
+                                      
+                                        self.postsTableView.insertRows(at: [IndexPath(row:self.posts.count - 1,section: 0)],with: .automatic)
+                                    }else {
+                                        self.posts.insert(post,at:0)
+                                      
+                                        self.postsTableView.insertRows(at: [IndexPath(row: 0,section: 0)],with: .automatic)
                                     }
+                                  
+                                    self.postsTableView.endUpdates()
+                                    
                                     
                                 }
                             }
                         }
-                        case .modified:
+                    case .modified:
                         let postId = diff.document.documentID
                         if let currentPost = self.posts.first(where: {$0.id == postId}),
                            let updateIndex = self.posts.firstIndex(where: {$0.id == postId}){
-                            let newPost = Post(dict:post, id: postId, user: currentPost.user)
+                            let newPost = Post(dict:postData, id: postId, user: currentPost.user)
                             self.posts[updateIndex] = newPost
-                            DispatchQueue.main.async {
-                                self.postsTableView.reloadData()
-                            }
+                         
+                                self.postsTableView.beginUpdates()
+                                self.postsTableView.deleteRows(at: [IndexPath(row: updateIndex,section: 0)], with: .left)
+                                self.postsTableView.insertRows(at: [IndexPath(row: updateIndex,section: 0)],with: .left)
+                                self.postsTableView.endUpdates()
+                            
                         }
                     case .removed:
                         let postId = diff.document.documentID
                         if let deleteIndex = self.posts.firstIndex(where: {$0.id == postId}){
                             self.posts.remove(at: deleteIndex)
-                            DispatchQueue.main.async {
-                                self.postsTableView.reloadData()
-                            }
-                        }
+                          
+                                self.postsTableView.beginUpdates()
+                                self.postsTableView.deleteRows(at: [IndexPath(row: deleteIndex,section: 0)], with: .automatic)
+                                self.postsTableView.endUpdates()
+                            
                         }
                     }
                 }
             }
         }
-      
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "toPostVC" {
@@ -112,7 +125,7 @@ class HomeViewController: UIViewController {
                 vc.selectedPost = selectedPost
                 vc.selectedPostImage = selectedPostImage
                 vc.selectUserImage = selectUseImage
-                
+            
             }
         }
      
@@ -125,16 +138,26 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchController.isActive ?filteredPost.count : posts.count
+        return searchController.isActive ? filteredPost.count : posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellViewController") as! PostCellViewController
-        let post = searchController.isActive ? filteredPost[indexPath.row]: posts[indexPath.row]
-        cell.configure(with: post)
+        let post11 = searchController.isActive ? filteredPost[indexPath.row] : posts[indexPath.row]
+        DispatchQueue.main.async {
+            cell.postStageLabel.text = post11.stage
+            cell.postSubjectLabel.text = post11.subject
+            cell.postCityLabel.text = post11.city
+            cell.userNameLabel.text = post11.user.name
+            cell.postImageView.loadImageUsingCache(with: post11.imageUrl)
+            cell.userImageView.loadImageUsingCache(with: post11.user.imageUrl)
+        }
+        
+        
         cell.selectionStyle = .none
         
-        return cell.configure(with: posts[indexPath.row])
+        return cell
+//            .configure(with: posts[indexPath.row])
     }
 
 }
@@ -165,9 +188,9 @@ extension HomeViewController: UITableViewDelegate{
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filteredPost = posts.filter({ selectedPost in
-            return selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased()) 
+            return selectedPost.stage.lowercased().contains(searchController.searchBar.text!.lowercased())
+            || selectedPost.subject.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.city.lowercased().contains(searchController.searchBar.text!.lowercased()) || selectedPost.user.name.lowercased().contains(searchController.searchBar.text!.lowercased())
         })
         postsTableView.reloadData()
-
     }
 }
