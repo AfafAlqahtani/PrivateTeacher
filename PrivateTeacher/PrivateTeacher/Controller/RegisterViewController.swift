@@ -36,7 +36,7 @@ class RegisterViewController: UIViewController {
             viewOfImageShow.layer.borderWidth = 0
             viewOfImageShow.layer.cornerRadius = 20
             viewOfImageShow.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-  //            viewWelcome.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+            
             viewOfImageShow.layer.masksToBounds = true
             viewOfImageShow.isUserInteractionEnabled = true
           }
